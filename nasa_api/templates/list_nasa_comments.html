@@ -1,0 +1,9 @@
+{% for nasa_comment in nasa_comments %}
+  <li>
+    <a href="/nasa/comment/{{ nasa_comment.id }}">{{ nasa_comment.comment }}</a>
+    <ul>
+      <li>{{nasa_comment.id}} </li>
+      <li> this is the rating {{nasa_comment.rating}} </li>
+    </ul>
+  </li>
+{% endfor %}

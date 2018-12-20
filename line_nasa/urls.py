@@ -1,0 +1,33 @@
+"""line_nasa URL Configuration
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/2.0/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import path
+from nasa_api import views
+
+#bellow are the paths in the url. the urI will direct you
+# to a specific page on a website
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    #this is the create url
+    path('nasa/comment/create/', views.nasa_comment_create),
+    #Detailed view of one instance
+    path('nasa/comment/<int:nasa_id>/', views.nasa_comment),
+    #list all the NasaComments
+    path('nasa/comment/list/', views.nasa_comment_list),
+    #date picker
+    path('nasa/datepick/', views.date_picker)
+]

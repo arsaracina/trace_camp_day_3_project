@@ -1,0 +1,9 @@
+<img src="{{ nasa_url}}"/>
+<form action="/nasa/comment/create/" method="POST">
+  {% csrf_token %}
+  <input type= "text" name="comment">
+  <input type= "number" name="rating" min = "0" max = "10">
+  <input type="submit" value="Rate Nasa Picture">
+  <input type="hidden" value= "{{date}}" name="date">
+  {{ nasa_url }}
+</form>
